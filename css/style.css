@@ -1,0 +1,1236 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --sahrul-black: #171817;
+    --sahrul-white: #f5f5f2;
+    --sahrul-grey: #858984;
+    --sahrul-line: #d9dcd6;
+    --sahrul-green: #526b55;
+
+    --sahrul-font: 'DM Sans', sans-serif;
+    --sahrul-head: 'Manrope', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--sahrul-white);
+    color: var(--sahrul-black);
+    font-family: var(--sahrul-font);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.sahrul_container {
+    width: min(1120px, 88%);
+    margin-inline: auto;
+}
+
+.sahrul_eyebrow {
+    margin-bottom: 18px;
+    color: var(--sahrul-green);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.3px;
+}
+
+.sahrul_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 21px;
+    border: 1px solid transparent;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    transition: 0.25s;
+}
+
+.sahrul_btn_light {
+    background: var(--sahrul-white);
+    color: var(--sahrul-black);
+}
+
+.sahrul_btn_dark {
+    background: var(--sahrul-black);
+    color: #fff;
+}
+
+.sahrul_btn:hover {
+    transform: translateY(-3px);
+    background: var(--sahrul-green);
+    color: #fff;
+}
+
+.sahrul_underlink,
+.sahrul_text_link {
+    padding-bottom: 5px;
+    border-bottom: 1px solid;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sahrul_header {
+    position: sticky;
+    z-index: 20;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 78px;
+    padding-inline: 6%;
+
+    border-bottom: 1px solid var(--sahrul-line);
+    background: rgba(245, 245, 242, 0.97);
+
+    backdrop-filter: blur(12px);
+}
+
+.sahrul_logo {
+    font: 800 21px var(--sahrul-head);
+    letter-spacing: -1.2px;
+}
+
+.sahrul_logo span {
+    font-weight: 400;
+}
+
+.sahrul_nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.sahrul_nav a {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.25s;
+}
+
+.sahrul_nav a:hover,
+.sahrul_nav a.sahrul_active {
+    color: var(--sahrul-green);
+}
+
+.sahrul_cart_link {
+    padding: 8px 12px;
+    border: 1px solid var(--sahrul-black);
+}
+
+.sahrul_cart_link b {
+    margin-left: 3px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    background: var(--sahrul-black);
+    color: #fff;
+}
+
+.sahrul_nav_toggle {
+    display: none;
+    border: 0;
+    background: none;
+    font-size: 25px;
+}
+
+.sahrul_hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 610px;
+    overflow: hidden;
+
+    background: var(--sahrul-black);
+    color: #fff;
+}
+
+.sahrul_hero_content {
+    align-self: center;
+    padding: 90px 8% 85px 13%;
+}
+
+.sahrul_hero h1,
+.sahrul_page_hero h1 {
+    font: 800 clamp(48px, 7vw, 90px)/0.98 var(--sahrul-head);
+    letter-spacing: -5px;
+}
+
+.sahrul_hero h1 em,
+.sahrul_page_hero h1 em,
+.sahrul_intro h2 em,
+.sahrul_feature_text h2 em,
+.sahrul_section_head h2 em,
+.sahrul_cta h2 em,
+.sahrul_quote h2 em {
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+.sahrul_hero_text {
+    max-width: 390px;
+    margin: 25px 0 30px;
+    color: #c6c9c4;
+    font-size: 14px;
+}
+
+.sahrul_actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 22px;
+}
+
+.sahrul_hero_image {
+    position: relative;
+    min-height: 610px;
+    animation: sahrulZoom 1s both;
+}
+
+.sahrul_hero_image::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(23, 24, 23, 0.2),
+        transparent
+    );
+    content: "";
+}
+
+.sahrul_image_label {
+    position: absolute;
+    z-index: 1;
+    right: 24px;
+    bottom: 22px;
+    color: #fff;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.sahrul_intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    padding-block: 105px;
+}
+
+.sahrul_intro h2,
+.sahrul_feature_text h2,
+.sahrul_section_head h2,
+.sahrul_order_layout h2,
+.sahrul_checkout h2,
+.sahrul_contact_layout h2 {
+    font: 700 clamp(34px, 4vw, 54px)/1.1 var(--sahrul-head);
+    letter-spacing: -2px;
+}
+
+.sahrul_intro_copy {
+    max-width: 440px;
+    padding-top: 38px;
+}
+
+.sahrul_intro_copy p,
+.sahrul_feature_text > p:not(.sahrul_eyebrow) {
+    margin-bottom: 24px;
+    color: #666d66;
+    font-size: 14px;
+}
+
+.sahrul_feature {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    min-height: 450px;
+    background: #e7e9e4;
+}
+
+.sahrul_feature_img {
+    min-height: 450px;
+}
+
+.sahrul_feature_text {
+    align-self: center;
+    padding: 75px 12%;
+}
+
+.sahrul_feature_text h2 {
+    margin-bottom: 20px;
+}
+
+.sahrul_highlights {
+    padding-block: 100px 105px;
+}
+
+.sahrul_section_head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.sahrul_section_head h2 {
+    font-size: 42px;
+}
+
+.sahrul_product_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.sahrul_product_card {
+    min-width: 0;
+    transition: transform 0.35s, box-shadow 0.35s;
+}
+
+.sahrul_product_card:hover {
+    transform: translateY(-7px);
+}
+
+.sahrul_product_image {
+    display: block;
+    height: 225px;
+    overflow: hidden;
+    background: #e9ebe7;
+}
+
+.sahrul_product_image img {
+    transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.sahrul_product_card:hover .sahrul_product_image img {
+    transform: scale(1.045);
+}
+
+.sahrul_product_meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 13px;
+}
+
+.sahrul_product_meta h3 {
+    font: 700 15px var(--sahrul-head);
+}
+
+.sahrul_product_meta p {
+    color: #70756f;
+    font-size: 12px;
+}
+
+.sahrul_product_price {
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.sahrul_product_actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.sahrul_small_btn {
+    padding: 9px 11px;
+    border: 1px solid var(--sahrul-black);
+    background: transparent;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.25s;
+}
+
+.sahrul_small_btn:hover {
+    background: var(--sahrul-black);
+    color: #fff;
+}
+
+.sahrul_cta {
+    padding: 85px 20px;
+    background: var(--sahrul-black);
+    color: #fff;
+    text-align: center;
+}
+
+.sahrul_cta h2 {
+    margin-bottom: 25px;
+    font: 700 clamp(38px, 5vw, 62px)/1.1 var(--sahrul-head);
+    letter-spacing: -2px;
+}
+
+.sahrul_cta .sahrul_eyebrow,
+.sahrul_values .sahrul_eyebrow {
+    color: #a8b6a5;
+}
+
+.sahrul_footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 15px;
+    padding: 42px 6% 22px;
+    background: #e7e9e4;
+}
+
+.sahrul_footer p {
+    color: #686e68;
+    font-size: 12px;
+}
+
+.sahrul_footer_links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+}
+
+.sahrul_footer_links a {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.sahrul_footer small {
+    grid-column: 1 / -1;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid #cfd2cc;
+    color: #737972;
+    font-size: 10px;
+}
+
+.sahrul_page_hero {
+    padding: 95px 10% 85px;
+    background: #e7e9e4;
+}
+
+.sahrul_page_hero h1 {
+    font-size: clamp(48px, 7vw, 82px);
+}
+
+.sahrul_page_hero > p:last-child {
+    max-width: 500px;
+    margin-top: 20px;
+    color: #656b65;
+    font-size: 14px;
+}
+
+.sahrul_about_split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 9%;
+    padding-block: 95px;
+}
+
+.sahrul_about_photo {
+    height: 430px;
+}
+
+.sahrul_about_split h2 {
+    margin-bottom: 22px;
+    font: 700 clamp(34px, 4vw, 52px)/1.1 var(--sahrul-head);
+    letter-spacing: -2px;
+}
+
+.sahrul_about_split > div:last-child > p:not(.sahrul_eyebrow) {
+    margin-bottom: 15px;
+    color: #656b65;
+    font-size: 14px;
+}
+
+.sahrul_values {
+    padding: 75px 0 85px;
+    background: var(--sahrul-black);
+    color: #fff;
+}
+
+.sahrul_value_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px;
+    margin-top: 32px;
+}
+
+.sahrul_value_grid article {
+    padding-top: 20px;
+    border-top: 1px solid #515651;
+}
+
+.sahrul_value_grid span {
+    color: #a8b6a5;
+    font-size: 11px;
+}
+
+.sahrul_value_grid h3 {
+    margin: 20px 0 10px;
+    font: 700 24px var(--sahrul-head);
+}
+
+.sahrul_value_grid p {
+    color: #bfc4bd;
+    font-size: 13px;
+}
+
+.sahrul_quote {
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.sahrul_quote h2 {
+    font: 700 clamp(34px, 5vw, 58px)/1.15 var(--sahrul-head);
+}
+
+.sahrul_menu_section {
+    padding-block: 50px 100px;
+}
+
+.sahrul_menu_toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.sahrul_filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.sahrul_filter {
+    padding: 10px 15px;
+    border: 1px solid var(--sahrul-line);
+    background: transparent;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.sahrul_filter.sahrul_active,
+.sahrul_filter:hover {
+    border-color: var(--sahrul-black);
+    background: var(--sahrul-black);
+    color: #fff;
+}
+
+.sahrul_all_products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 38px;
+}
+
+.sahrul_disclaimer {
+    margin-top: 30px;
+    color: #777d76;
+    font-size: 11px;
+}
+
+.sahrul_detail_wrap {
+    padding-block: 65px 95px;
+}
+
+.sahrul_detail_card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 7%;
+}
+
+.sahrul_detail_card > img {
+    height: 430px;
+    background: #e9ebe7;
+    object-fit: cover;
+}
+
+.sahrul_detail_card h2 {
+    margin: 10px 0;
+    font: 700 42px var(--sahrul-head);
+}
+
+.sahrul_detail_card p {
+    margin-bottom: 18px;
+    color: #687068;
+}
+
+.sahrul_detail_price {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.sahrul_order_layout {
+    display: grid;
+    grid-template-columns: 1.7fr 0.8fr;
+    gap: 40px;
+    padding-block: 70px 95px;
+}
+
+.sahrul_order_products {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 28px;
+}
+
+.sahrul_order_side,
+.sahrul_cart_summary {
+    position: sticky;
+    top: 100px;
+    height: max-content;
+    padding: 27px;
+    background: #e7e9e4;
+}
+
+.sahrul_order_side h3,
+.sahrul_cart_summary h3 {
+    margin-bottom: 15px;
+    font: 700 22px var(--sahrul-head);
+}
+
+.sahrul_order_side p {
+    margin-bottom: 18px;
+    color: #687068;
+    font-size: 13px;
+}
+
+.sahrul_cart_layout {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 40px;
+    padding-block: 60px 70px;
+}
+
+.sahrul_cart_row {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 17px;
+    padding: 17px 0;
+    border-bottom: 1px solid var(--sahrul-line);
+}
+
+.sahrul_cart_row img {
+    height: 88px;
+    background: #e9ebe7;
+}
+
+.sahrul_cart_row h4 {
+    font: 700 15px var(--sahrul-head);
+}
+
+.sahrul_cart_row p {
+    color: #687068;
+    font-size: 12px;
+}
+
+.sahrul_qty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 7px;
+}
+
+.sahrul_qty button {
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--sahrul-line);
+    background: #fff;
+}
+
+.sahrul_remove {
+    margin-top: 5px;
+    border: 0;
+    background: none;
+    font-size: 10px;
+    text-decoration: underline;
+}
+
+.sahrul_total_line {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #cdd1ca;
+    font-size: 13px;
+}
+
+.sahrul_grand {
+    padding: 17px 0;
+    border: 0;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.sahrul_full {
+    width: 100%;
+}
+
+.sahrul_empty {
+    padding: 35px 0;
+}
+
+.sahrul_empty p {
+    margin: 10px 0 20px;
+    color: #687068;
+}
+
+.sahrul_checkout {
+    padding-bottom: 95px;
+}
+
+.sahrul_checkout h2 {
+    margin-bottom: 28px;
+}
+
+.sahrul_form {
+    display: grid;
+    gap: 16px;
+    max-width: 650px;
+}
+
+.sahrul_form label {
+    display: grid;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.sahrul_form input,
+.sahrul_form textarea,
+.sahrul_form select {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 14px;
+    border: 1px solid #c9cec7;
+    outline: none;
+    background: transparent;
+    font: 13px var(--sahrul-font);
+}
+
+.sahrul_form input:focus,
+.sahrul_form textarea:focus,
+.sahrul_form select:focus {
+    border-color: var(--sahrul-green);
+}
+
+.sahrul_form button {
+    justify-self: start;
+}
+
+.sahrul_notice,
+.sahrul_feedback {
+    margin-top: 14px;
+    color: var(--sahrul-green);
+    font-size: 13px;
+}
+
+.sahrul_contact_layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    padding-block: 75px 100px;
+}
+
+.sahrul_contact_layout h2 {
+    margin-bottom: 30px;
+}
+
+.sahrul_contact_item {
+    padding: 14px 0;
+    border-top: 1px solid var(--sahrul-line);
+}
+
+.sahrul_contact_item span {
+    color: var(--sahrul-green);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.sahrul_contact_item p {
+    margin-top: 5px;
+    color: #626962;
+    font-size: 13px;
+}
+
+.sahrul_gallery_section {
+    padding-block: 30px 90px;
+}
+
+.sahrul_gallery_intro {
+    max-width: 620px;
+    margin-bottom: 34px;
+}
+
+.sahrul_gallery_intro h2 {
+    margin: 12px 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.05;
+}
+
+.sahrul_gallery_intro h2 em {
+    font-family: Georgia, serif;
+    font-weight: 400;
+}
+
+.sahrul_gallery_intro > p:last-child {
+    color: #708078;
+    line-height: 1.7;
+}
+
+.sahrul_gallery_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.sahrul_gallery_item {
+    position: relative;
+    display: block;
+    height: 290px;
+    min-height: 250px;
+    overflow: hidden;
+    background: #e8ece8;
+    color: #fff;
+}
+
+.sahrul_gallery_item.sahrul_gallery_tall {
+    grid-row: span 2;
+    height: 598px;
+}
+
+.sahrul_gallery_item img {
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.sahrul_gallery_item::after {
+    position: absolute;
+    inset: 35% 0 0;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.58)
+    );
+    content: "";
+}
+
+.sahrul_gallery_item span {
+    position: absolute;
+    z-index: 1;
+    bottom: 18px;
+    left: 20px;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.sahrul_gallery_item:hover img {
+    transform: scale(1.055);
+}
+
+.sahrul_reveal,
+.sahrul_reveal_left,
+.sahrul_reveal_right {
+    opacity: 0;
+    transition:
+        opacity 0.75s ease,
+        transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.sahrul_reveal {
+    transform: translateY(35px);
+}
+
+.sahrul_reveal_left {
+    transform: translateX(-45px);
+}
+
+.sahrul_reveal_right {
+    transform: translateX(45px);
+}
+
+.sahrul_visible {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+}
+
+@keyframes sahrulSlideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-45px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes sahrulZoom {
+    from {
+        opacity: 0;
+        transform: scale(1.06);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes sahrulFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sahrul_hero_content > * {
+    animation: sahrulSlideLeft 0.8s both;
+}
+
+.sahrul_hero_content > *:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.sahrul_hero_content > *:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+.sahrul_hero_content > *:nth-child(4) {
+    animation-delay: 0.36s;
+}
+
+.sahrul_page_hero > * {
+    animation: sahrulFadeUp 0.7s both;
+}
+
+.sahrul_page_hero > *:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.sahrul_page_hero > *:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+@media (max-width: 800px) {
+
+    .sahrul_header {
+        height: 70px;
+        padding-inline: 5%;
+    }
+
+    .sahrul_nav_toggle {
+        display: block;
+    }
+
+    .sahrul_nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        left: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+
+        padding: 22px 6%;
+        border-bottom: 1px solid var(--sahrul-line);
+        background: var(--sahrul-white);
+    }
+
+    .sahrul_nav.open {
+        display: flex;
+    }
+
+    .sahrul_hero {
+        grid-template-columns: 1fr;
+    }
+
+    .sahrul_hero_content {
+        padding: 75px 8% 55px;
+    }
+
+    .sahrul_hero_image {
+        height: 320px;
+        min-height: 320px;
+    }
+
+    .sahrul_intro,
+    .sahrul_about_split,
+    .sahrul_feature,
+    .sahrul_detail_card,
+    .sahrul_order_layout,
+    .sahrul_cart_layout,
+    .sahrul_contact_layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sahrul_intro {
+        gap: 20px;
+        padding-block: 70px;
+    }
+
+    .sahrul_intro_copy {
+        padding-top: 0;
+    }
+
+    .sahrul_feature_img {
+        height: 300px;
+        min-height: 300px;
+    }
+
+    .sahrul_feature_text {
+        padding: 55px 8%;
+    }
+
+    .sahrul_product_grid,
+    .sahrul_all_products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sahrul_product_image {
+        height: 185px;
+    }
+
+    .sahrul_footer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sahrul_footer p,
+    .sahrul_footer_links {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+    }
+
+    .sahrul_page_hero {
+        padding: 70px 7%;
+    }
+
+    .sahrul_about_split {
+        gap: 35px;
+        padding-block: 60px;
+    }
+
+    .sahrul_about_photo {
+        height: 320px;
+    }
+
+    .sahrul_order_side,
+    .sahrul_cart_summary {
+        position: static;
+    }
+
+    .sahrul_contact_layout {
+        gap: 40px;
+    }
+
+    .sahrul_detail_card {
+        gap: 28px;
+    }
+
+    .sahrul_detail_card > img {
+        height: 350px;
+    }
+
+    .sahrul_gallery_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .sahrul_gallery_item {
+        height: 220px;
+        min-height: 220px;
+    }
+
+    .sahrul_gallery_item.sahrul_gallery_tall {
+        height: 452px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .sahrul_container {
+        width: 90%;
+    }
+
+    .sahrul_filters {
+        width: 100%;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: thin;
+    }
+
+    .sahrul_menu_toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .sahrul_cart_row {
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 11px;
+    }
+
+    .sahrul_cart_row img {
+        height: 72px;
+    }
+
+    .sahrul_cart_row > strong {
+        grid-column: 2;
+    }
+
+    .sahrul_value_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sahrul_gallery_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sahrul_gallery_item,
+    .sahrul_gallery_item.sahrul_gallery_tall {
+        height: 260px;
+        min-height: 260px;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .sahrul_hero h1,
+    .sahrul_page_hero h1 {
+        font-size: clamp(42px, 13vw, 58px);
+        letter-spacing: -3px;
+    }
+
+    .sahrul_product_grid,
+    .sahrul_all_products,
+    .sahrul_order_products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+    }
+
+    .sahrul_product_image {
+        height: 140px;
+    }
+
+    .sahrul_product_meta {
+        display: block;
+    }
+
+    .sahrul_product_meta h3 {
+        overflow-wrap: anywhere;
+    }
+
+    .sahrul_product_price {
+        display: block;
+        margin-top: 5px;
+    }
+
+    .sahrul_section_head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .sahrul_footer {
+        padding-inline: 6%;
+    }
+
+    .sahrul_detail_card h2 {
+        font-size: 32px;
+    }
+
+    .sahrul_order_side,
+    .sahrul_cart_summary {
+        padding: 20px;
+    }
+
+    .sahrul_product_actions .sahrul_small_btn {
+        flex: 1 1 auto;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .sahrul_product_grid,
+    .sahrul_all_products,
+    .sahrul_order_products {
+        grid-template-columns: 1fr;
+    }
+
+    .sahrul_product_image {
+        height: 210px;
+    }
+
+    .sahrul_actions {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .sahrul_cart_row {
+        grid-template-columns: 60px minmax(0, 1fr);
+    }
+
+    .sahrul_cart_row img {
+        height: 60px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .sahrul_reveal,
+    .sahrul_reveal_left,
+    .sahrul_reveal_right {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
